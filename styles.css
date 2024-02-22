@@ -18,7 +18,7 @@
 }
 body {
     background: var(--Very-Dark-Blue);
-    padding: 0 1.65rem 0 ;
+        padding: 0 1.65rem 0 ;
 }
 main {
     margin: 10.3rem auto 0;
@@ -158,11 +158,26 @@ main {
     }
 }
 .attribution {
-    display: none;
     text-align: center;
+    margin: 10rem auto 10rem ;
+    color: var(--White);
+    width: fit-content;
+}
+.attribution:hover {
+    animation: pop 0.5s forwards ease-out;
+}
+@keyframes pop {
+    100% {
+        padding: 1rem 2rem;
+        scale: 1.5;
+        border: 0.5rem solid var(--Orange);
+        border-radius: 1rem;
+        box-shadow: 0.5rem 0.5rem var(--White);
+    }
 }
 .attribution a {
-        color: hsl(228, 45%, 44%);
+        color: var(--Orange);
+        text-decoration: none;
 }
 @media screen and (min-width: 28rem) {
     main {

@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 15px;
+    font-family: "Overpass", sans-serif;
+}
+:root {
+    --main: #1B222C;
+    --Orange: hsl(25, 97%, 53%);
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Medium-Grey: hsl(216, 12%, 54%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+body {
+    background: var(--Very-Dark-Blue);
+    padding: 0 1.65rem 0 ;
+}
+main {
+    margin: 10.3rem auto 0;
+    padding: 1.5rem 1.5rem 2.05rem;
+    border-radius: 2rem;
+    background: linear-gradient(180deg, var(--Dark-Blue), var(--main), var(--main));
+    max-width: 27.5rem;
+}
+.rating {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+.icon-star, .num {
+    border-radius: 50%;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    color: var(--Medium-Grey);
+    background: var(--Dark-Blue);
+}
+.rating h2 {
+    font-size: 1.6rem;
+    margin: 0.3rem 0 0 0;
+    font-weight: 650;
+    color: var(--White);
+}
+.rating p {
+    top: -2.1px;
+    font-weight: 450;
+    letter-spacing: -0.5px;
+    line-height: 1.45rem;
+    color: var(--Light-Grey);
+}
+.nums {
+    display: flex;
+    margin: 0.5rem 0 0 0;
+    justify-content: space-between;
+}
+.num {
+    padding: 0;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.num:hover {
+    background: var(--Light-Grey);
+    color: var(--White);
+}
+.selected {
+    background: var(--Orange);
+    color: var(--White);
+}
+.rating button {
+    cursor: pointer;
+    margin: 0.65rem 0 0 0;
+    background: var(--Orange);
+    color: var(--White);
+    border: 0;
+    text-transform:  uppercase;
+    border-radius: 10rem;
+    font-weight: 400;
+    letter-spacing: 0.11rem;
+    padding: 1rem  0 0.75rem;
+}
+.rating button:hover {
+    color: var(--Orange);
+    background: var(--White);
+}
+.msg {
+    display: none;
+    flex-flow: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.thank-you {
+    scale: 0.9;
+    margin: 5px 0 0 0;
+}
+.ans {
+    margin: -0.70rem 0 0 0;
+    letter-spacing: -0.03rem;
+    font-weight: 400;
+    padding: 0.5rem 0.8rem;
+    border-radius: 10rem;
+    color: var(--Orange);
+    background: var(--Dark-Blue);
+}
+.msg h2 {
+    top: 2px;
+    font-size: 1.6rem;
+    font-weight: 650;
+    color: var(--White);
+}
+.msg p {
+    text-align: center;
+    font-size: 0.94rem;
+    top: -8.5px;
+    line-height: 1.45rem;
+    color: var(--Light-Grey);
+}
+.show {
+    animation: show 1s 0.5s forwards ease-out;
+    display: flex;
+    position: absolute;
+    visibility: hidden;
+}
+.hide {
+    animation: hide 0.5s forwards ease-in;
+}
+@keyframes show {
+    0% {
+        scale: 0;
+    }
+    0%, 100% {
+        position: relative;
+        visibility: visible;
+        overflow: hidden;
+        display: flex;
+    }
+    100% {
+        scale: 1;
+    }
+}
+@keyframes hide {
+    0%, 100% {
+        overflow: hidden;
+    }
+    100% {
+        scale: 0;
+        display: none;
+    }
+}
+.attribution {
+    display: none;
+    text-align: center;
+}
+.attribution a {
+        color: hsl(228, 45%, 44%);
+}
+@media screen and (min-width: 28rem) {
+    main {
+        margin: 13rem auto 0;
+        padding: 2rem 2.6rem 2rem 2.2rem;
+    }
+    .rating {
+        gap: 2rem;
+    }
+    .icon-star, .num {
+        scale: 1.1;
+        top: 6px;
+        left: 3px;
+    }
+    .rating h2 {
+        font-size: 1.85rem;
+        top: 7px;
+    }
+    .rating p {
+        top: -13px;
+        letter-spacing: 0;
+        line-height: 1.6rem;
+    }
+    .nums {
+        margin: -0.9rem 0 0 0;
+        padding: 0 0.2rem;
+    }
+    .num {
+        top: 0;
+        left: 0;
+    }
+    .rating > button {
+        margin: 0.4rem 0 0 0;
+    }
+}
